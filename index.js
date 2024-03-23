@@ -9,7 +9,6 @@ const routes = require("./routes/routes")
 const conn = require("./db/conn")
 
 conn()
-
 app.use('/', routes)
 
 
