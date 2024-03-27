@@ -12,6 +12,6 @@ conn()
 app.use('/', routes)
 
 
-app.listen(3000, function () {
-    console.log('Server UP port 3000')
+const listener = app.listen(process.env.API_PORT || 8080, function () {
+    console.log(`Server UP port ${listener.address().port}`)
 })
