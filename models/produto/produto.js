@@ -4,7 +4,16 @@ const schema = mongoose.Schema({
     nome: String,
     preco: Number,
     tamanho: String,
-    tipo: String
+    tipo: String,
+    ingredientes: [
+        {
+            nome: String,
+            descricao: String,
+/*             quantidade: Number
+ */
+
+        }
+    ]
 })
 
 const Produto = mongoose.model('Produto', schema)
