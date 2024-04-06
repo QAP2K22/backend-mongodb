@@ -18,8 +18,18 @@ const ProdutoController = {
     },
     getByName: async (req, res) => {
         try {
+
+           /*  const filtros = {}
+            const campos = Object.keys(Produtos.schema.paths)
+            for (let campo in req.query) {
+                if(campos.includes(campo)){
+                    filtros[campo] = {$regex: new RegExp(req.query[campo],'i')}
+                }
+            } */
+
             const product_name = req.params.product_name
-            res.json(await Produto.findOne({ nome: product_name }))
+            res.json(await Produto.find({ nome: { $regex: product_name, $options: 'mi' } }))
+            //res.json(await Produto.findOne({ nome: product_name }))
         } catch (error) {
             res.status(404).json({ error: "[BACKEND STATUS]: " + error })
         }
