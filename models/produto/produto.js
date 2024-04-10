@@ -8,10 +8,7 @@ const schema = mongoose.Schema({
     ingredientes: [
         {
             nome: String,
-            descricao: String,
-/*             quantidade: Number
- */
-
+            descricao: String
         }
     ]
 })

@@ -29,7 +29,6 @@ const ProdutoController = {
 
             const product_name = req.params.product_name
             res.json(await Produto.find({ nome: { $regex: product_name, $options: 'mi' } }))
-            //res.json(await Produto.findOne({ nome: product_name }))
         } catch (error) {
             res.status(404).json({ error: "[BACKEND STATUS]: " + error })
         }
